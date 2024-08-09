@@ -1,0 +1,38 @@
+{{define "Index"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alura Loja</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+  <div class="w-full max-w-4xl p-6 bg-white shadow-md rounded-md">
+    <h1 class="text-3xl font-bold text-center mb-6 text-blue-600">Alura Loja</h1>
+    <div class="overflow-x-auto">
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="bg-blue-600 text-white">
+            <th class="p-3 text-left">Nome</th>
+            <th class="p-3 text-left">Descrição</th>
+            <th class="p-3 text-left">Preço</th>
+            <th class="p-3 text-left">Quantidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{range .}}
+          <tr class="bg-gray-100 hover:bg-gray-200">
+            <td class="p-3 border border-gray-300">{{.Nome}}</td>
+            <td class="p-3 border border-gray-300">{{.Descricao}}</td>
+            <td class="p-3 border border-gray-300">{{.Preco}}</td>
+            <td class="p-3 border border-gray-300">{{.Quantidade}}</td>
+          </tr>
+          {{end}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
+{{end}}
